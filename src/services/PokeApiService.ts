@@ -32,5 +32,4 @@ export class PokeApiService {
       return null;
     }
   }
-}import { PokemonApiResponse, PokemonResumo } from "../models/pokemon";
-
+}
