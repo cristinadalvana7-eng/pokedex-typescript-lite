@@ -1,143 +1,141 @@
-Pokédex TypeScript Lite
+# Pokédex TypeScript Lite
 
-Descrição
+## Descrição
 
-Mini-projeto desenvolvido em Node.js e TypeScript para consultar
-informações de Pokémon na PokeAPI e armazenar os Pokémon encontrados em
-um catálogo durante a execução do programa.
+Mini-projeto desenvolvido em Node.js e TypeScript para consultar informações de Pokémon na PokeAPI e armazenar os Pokémon encontrados em um catálogo durante a execução do programa.
 
-Objetivo
+## Objetivo
 
-Praticar conceitos básicos de desenvolvimento back-end com Node.js e
-TypeScript, incluindo:
+Praticar conceitos básicos de desenvolvimento back-end com Node.js e TypeScript, incluindo:
 
-interfaces;
+- Interfaces
+- Classes
+- Arrays
+- Métodos de array
+- Funções assíncronas
+- async/await
+- fetch
+- Tratamento de erros
+- Consumo de API
+- Git e GitHub
 
-classes;
+## Tecnologias utilizadas
 
-arrays;
+- Node.js
+- TypeScript
+- PokeAPI
+- tsx
+- Git
+- GitHub
 
-métodos de array;
-
-funções assíncronas;
-
-async/await;
-
-fetch;
-
-tratamento de erros;
-
-consumo de API;
-
-Git e GitHub.
-
-Tecnologias utilizadas
-
-Node.js
-
-TypeScript
-
-PokeAPI
-
-tsx
-
-Git
-
-GitHub
-
-Pré-requisitos
+## Pré-requisitos
 
 Para executar o projeto é necessário ter Node.js e npm instalados.
 
-Instalação
+## Instalação
 
-Depois de baixar ou clonar o projeto, entre na pasta pelo terminal e
-execute:
+Depois de baixar ou clonar o projeto, entre na pasta pelo terminal e execute:
 
+```bash
 npm install
+```
 
-Como executar
+## Como executar
 
 Para executar o projeto em modo de desenvolvimento:
 
+```bash
 npm run dev
+```
 
 O ponto de entrada da aplicação é:
 
+```text
 src/main.ts
+```
 
-Funcionalidades
+## Funcionalidades
 
-Busca de Pokémon pelo nome ou ID.
+- Busca de Pokémon pelo nome ou ID.
+- Tratamento de Pokémon inexistente.
+- Mapeamento dos dados recebidos da PokeAPI.
+- Adição de Pokémon ao catálogo.
+- Bloqueio de Pokémon duplicado.
+- Listagem do catálogo.
+- Remoção de Pokémon pelo ID.
+- Tratamento de tentativa de remoção de Pokémon inexistente.
 
-Tratamento de Pokémon inexistente.
+## Exemplos de execução
 
-Mapeamento dos dados recebidos da PokeAPI.
-
-Adição de Pokémon ao catálogo.
-
-Bloqueio de Pokémon duplicado.
-
-Listagem do catálogo.
-
-Remoção de Pokémon pelo ID.
-
-Tratamento de tentativa de remoção de Pokémon inexistente.
-
-Exemplos de execução
-
-Busca válida
+### Busca válida
 
 Entrada testada:
 
+```text
 pikachu
+```
 
 Resultado:
 
+```text
 [OK] Pokémon encontrado: pikachu
+```
 
 Dados retornados:
 
+```text
 ID: 25
 Nome: pikachu
 Tipo: electric
 Altura: 4
 Peso: 60
+```
 
-Busca inválida
+### Busca inválida
 
 Entrada testada:
 
+```text
 pokemon-inexistente
+```
 
 Resultado:
 
+```text
 [ERRO] Pokémon não encontrado: pokemon-inexistente
 null
+```
 
-Duplicidade
+### Duplicidade
 
 Foi testada a tentativa de adicionar o mesmo Pokémon duas vezes.
 
 Resultado:
 
+```text
 [OK] pikachu adicionado ao catálogo.
 [AVISO] pikachu já está no catálogo.
+```
 
-Remoção
+### Remoção
 
 Foi testada a remoção do Pokémon com ID 25.
 
 Resultado:
 
+```text
 [OK] Pokémon removido do catálogo.
+```
 
 Também foi testada a tentativa de remover um ID inexistente:
 
+```text
 [AVISO] Nenhum Pokémon encontrado com esse ID.
+```
 
-Estrutura dos arquivos
+## Estrutura dos arquivos
 
+```text
 pokedex-typescript-lite/
 ├── src/
 │   ├── models/
@@ -151,28 +149,25 @@ pokedex-typescript-lite/
 ├── package-lock.json
 ├── tsconfig.json
 └── README.md
+```
 
-src/models/pokemon.ts
+### `src/models/pokemon.ts`
 
-Contém as interfaces utilizadas para representar os dados do Pokémon e o
-retorno da PokeAPI.
+Contém as interfaces utilizadas para representar os dados do Pokémon e o retorno da PokeAPI.
 
-src/services/PokeApiService.ts
+### `src/services/PokeApiService.ts`
 
-Responsável por consultar a PokeAPI, tratar erros e transformar os dados
-recebidos em um objeto simplificado.
+Responsável por consultar a PokeAPI, tratar erros e transformar os dados recebidos em um objeto simplificado.
 
-src/services/BoxService.ts
+### `src/services/BoxService.ts`
 
-Contém a classe CatalogoPokemon, responsável por adicionar, listar e
-remover Pokémon do catálogo em memória.
+Contém a classe `CatalogoPokemon`, responsável por adicionar, listar e remover Pokémon do catálogo em memória.
 
-src/main.ts
+### `src/main.ts`
 
-Arquivo principal utilizado para executar e demonstrar o funcionamento
-do projeto.
+Arquivo principal utilizado para executar e demonstrar o funcionamento do projeto.
 
-PokeAPI
+## PokeAPI
 
 A aplicação utiliza a PokeAPI para consultar os dados dos Pokémon.
 
@@ -180,49 +175,31 @@ Documentação oficial:
 
 https://pokeapi.co/docs/v2
 
-Kanban
+## Kanban
 
-O planejamento foi organizado usando as quatro colunas solicitadas no
-exercício.
+O planejamento do projeto foi organizado utilizando quatro colunas:
 
-Backlog           A Fazer           Em Andamento      Concluído
+| Backlog | A Fazer | Em Andamento | Concluído |
+|---|---|---|---|
+| Melhorias futuras | Novos testes | README | Criar repositório no GitHub |
+| Novas funcionalidades | Configurar Node.js e TypeScript | Documentação | Criar interfaces de Pokémon |
+|  |  |  | Criar integração com PokeAPI |
+|  |  |  | Tratar Pokémon inexistente |
+|  |  |  | Mapear resposta da API |
+|  |  |  | Criar catálogo |
+|  |  |  | Impedir duplicidade |
+|  |  |  | Listar Pokémon |
+|  |  |  | Remover Pokémon |
 
-Melhorias futuras Novos testes      README            Criar repositório
-no GitHub
+## Branches utilizadas
 
-Novas                                                 Configurar
-funcionalidades                                       Node.js e
-TypeScript
-
-                                                    Criar interfaces
-                                                    de Pokémon
-
-                                                    Criar integração
-                                                    com PokeAPI
-
-                                                    Tratar Pokémon
-                                                    inexistente
-
-                                                    Mapear resposta
-                                                    da API
-
-                                                    Criar catálogo
-
-                                                    Impedir
-                                                    duplicidade
-
-                                                    Listar Pokémon
-
-                                                    Remover Pokémon
-
-Branches utilizadas
-
+```text
 main
 develop
 feat/pokedex
 docs/readme
+```
 
-Versionamento
+## Versionamento
 
-O projeto foi desenvolvido de forma incremental utilizando Git e GitHub,
-com commits separados para as principais etapas do desenvolvimento.
+O projeto foi desenvolvido de forma incremental utilizando Git e GitHub, com commits separados para as principais etapas do desenvolvimento.
